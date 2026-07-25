@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card p-4">
+    <h2>{{ job.position }}</h2>
+    <h5 class="text-muted">{{ job.company_name }} - {{ job.job_location }}</h5>
+    <hr>
+    <p><strong>Status:</strong> <span class="badge bg-primary">{{ job.status }}</span></p>
+    <p><strong>Salary:</strong> {% if job.salary %}${{ job.salary }}{% else %}N/A{% endif %}</p>
+    <p><strong>Application Date:</strong> {{ job.application_date }}</p>
+    <p><strong>Deadline:</strong> {{ job.deadline }}</p>
+    <p><strong>Notes:</strong> {{ job.notes|default:"No notes available." }}</p>
+    <hr>
+    <div>
+        <a href="{% url 'job_update' job.id %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+{% endblock %}
