@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-4">Dashboard</h1>
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary p-3">
+            <h3>Total Applications</h3>
+            <h2>{{ total_apps }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-info p-3">
+            <h3>Applied</h3>
+            <h2>{{ counts.Applied }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-warning p-3">
+            <h3>Interview</h3>
+            <h2>{{ counts.Interview }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-secondary p-3">
+            <h3>Offer</h3>
+            <h2>{{ counts.Offer }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success p-3">
+            <h3>Accepted</h3>
+            <h2>{{ counts.Accepted }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-danger p-3">
+            <h3>Rejected</h3>
+            <h2>{{ counts.Rejected }}</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
